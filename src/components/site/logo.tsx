@@ -1,22 +1,17 @@
 import { useId } from "react";
+import { site } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 /**
  * ApiTestPilot mark: a paper-plane/compass shape built from connected
- * nodes, filled with the accent gradient. Inline SVG so it inherits
- * sizing via className.
+ * nodes, filled with the accent gradient. Inline SVG so it sizes via className.
  */
 export function LogoMark({ className }: { className?: string }) {
   const id = useId();
   const gradId = `logo-grad-${id.replace(/[^a-zA-Z0-9-]/g, "")}`;
 
   return (
-    <svg
-      viewBox="0 0 64 64"
-      role="img"
-      aria-label={site_name}
-      className={cn("size-8", className)}
-    >
+    <svg viewBox="0 0 64 64" role="img" aria-label={site.name} className={cn("size-8", className)}>
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="var(--color-primary)" />
@@ -37,8 +32,6 @@ export function LogoMark({ className }: { className?: string }) {
     </svg>
   );
 }
-
-const site_name = "ApiTestPilot";
 
 export function Logo({ className }: { className?: string }) {
   return (
