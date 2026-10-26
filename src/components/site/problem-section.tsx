@@ -26,8 +26,10 @@ const chaosDots: Array<[number, number]> = [
   [200, 200], [320, 180], [370, 220], [40, 130], [170, 140],
 ];
 
-const chaosLines: Array<[number, number]> = [
-  [0, 2], [2, 8], [8, 4], [4, 6], [6, 3], [1, 5], [5, 9], [9, 7], [7, 3], [0, 9],
+const chaosLines: Array<[number, number, number, number]> = [
+  [60, 60, 260, 90], [260, 90, 40, 130], [40, 130, 90, 170], [90, 170, 320, 180],
+  [320, 180, 340, 50], [150, 40, 200, 200], [200, 200, 170, 140], [170, 140, 370, 220],
+  [370, 220, 340, 50], [60, 60, 370, 220],
 ];
 
 const flowDots: Array<{ x: number; y: number; label: string }> = [
@@ -82,13 +84,13 @@ export function ProblemSection() {
                 Testing endpoints one by one
               </figcaption>
               <svg viewBox="0 0 400 260" className="w-full" role="img" aria-label="Isolated endpoint dots, unconnected">
-                {chaosLines.map(([a, b], i) => (
+                {chaosLines.map(([x1, y1, x2, y2], i) => (
                   <line
                     key={i}
-                    x1={chaosDots[a][0]}
-                    y1={chaosDots[a][1]}
-                    x2={chaosDots[b][0]}
-                    y2={chaosDots[b][1]}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
                     stroke="var(--color-border)"
                     strokeWidth="1.5"
                     strokeDasharray="4 6"
@@ -119,8 +121,8 @@ export function ProblemSection() {
                   stroke="url(#flow-grad)"
                   strokeWidth="3"
                   strokeLinecap="round"
-                  initial={reduce ? { pathLength: 1 } : { pathLength: 0, opacity: 0.4 }}
-                  whileInView={reduce ? undefined : { pathLength: 1, opacity: 1 }}
+                  initial={reduce ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0.4 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
                   viewport={{ once: true, margin: "-72px" }}
                   transition={{ duration: 1.6, ease: "easeInOut" }}
                   style={{ filter: "drop-shadow(0 0 8px color-mix(in oklab, var(--color-primary) 60%, transparent))" }}
