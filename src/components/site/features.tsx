@@ -1,5 +1,5 @@
 import { motion, useReducedMotion, useSpring } from "framer-motion";
-import { EyeOff, History, ListChecks, Route, Trash2, type LucideIcon } from "lucide-react";
+import { EyeOff, FileSearch, History, ListChecks, Route, Trash2, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -228,7 +228,7 @@ const features: Feature[] = [
     animation: <VersionsAnimation />,
   },
   {
-    icon: History,
+    icon: FileSearch,
     title: "Evidence, not guesses",
     body: "Every result keeps the real request, response, timing and failed assertion.",
     span: "md:col-span-3",
