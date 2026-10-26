@@ -1,5 +1,5 @@
 import { motion, useReducedMotion, useSpring } from "framer-motion";
-import { EyeOff, History, ListChecks, Route, Trash2, type LucideIcon } from "lucide-react";
+import { EyeOff, FileSearch, History, ListChecks, Route, Trash2, type LucideIcon } from "lucide-react";
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -36,7 +36,7 @@ function SpotlightCard({ children, className }: { children: ReactNode; className
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      style={reduce ? undefined : { rotateX, rotateY, transformPerspective: 900 }}
+      style={reduce ? {} : { rotateX, rotateY, transformPerspective: 900 }}
       className={cn("group relative h-full", className)}
     >
       <div className="glass relative h-full overflow-hidden rounded-2xl p-6">
@@ -147,7 +147,7 @@ function VersionsAnimation() {
         spec-v2.yaml
       </div>
       <motion.div
-        animate={reduce ? undefined : { y: [0, -4, 0] }}
+        animate={reduce ? {} : { y: [0, -4, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         className="absolute inset-x-0 bottom-6 rounded-xl border border-primary/50 bg-card px-3 py-2 font-mono text-[11px] text-foreground shadow-[0_0_20px_-6px_color-mix(in_oklab,var(--color-primary)_55%,transparent)]"
       >
@@ -228,7 +228,7 @@ const features: Feature[] = [
     animation: <VersionsAnimation />,
   },
   {
-    icon: History,
+    icon: FileSearch,
     title: "Evidence, not guesses",
     body: "Every result keeps the real request, response, timing and failed assertion.",
     span: "md:col-span-3",

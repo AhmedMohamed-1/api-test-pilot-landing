@@ -40,7 +40,7 @@ export function HeroScene({ className }: HeroSceneProps) {
       {/* Orb core */}
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
-          animate={reduce ? undefined : { scale: [1, 1.07, 1], opacity: [0.85, 1, 0.85] }}
+          animate={reduce ? {} : { scale: [1, 1.07, 1], opacity: [0.85, 1, 0.85] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           className="relative size-56 rounded-full sm:size-72"
           style={{
@@ -50,7 +50,7 @@ export function HeroScene({ className }: HeroSceneProps) {
           }}
         />
         <motion.div
-          animate={reduce ? undefined : { scale: [1, 1.12, 1] }}
+          animate={reduce ? {} : { scale: [1, 1.12, 1] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
           className="absolute size-72 rounded-full border border-primary/30 sm:size-96"
           style={{
@@ -72,7 +72,7 @@ export function HeroScene({ className }: HeroSceneProps) {
       {chips.map((chip) => (
         <motion.div
           key={chip.path + chip.method}
-          animate={reduce ? undefined : { y: [0, -12, 0], x: [0, 6, 0] }}
+          animate={{ y: [0, -12, 0], x: [0, 6, 0] }}
           transition={{ duration: chip.duration, repeat: Infinity, ease: "easeInOut", delay: chip.delay }}
           className={cn("absolute", chip.className)}
         >

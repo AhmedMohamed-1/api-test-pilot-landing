@@ -41,7 +41,7 @@ export function HowItWorks() {
 
         <div className="relative mt-14">
           {/* Connecting line — horizontal on desktop, vertical on mobile */}
-          <div aria-hidden="true" className="absolute inset-x-8 top-7 hidden lg:block">
+          <div aria-hidden="true" className="absolute left-[1.75rem] right-[calc(25%-1.75rem)] top-7 hidden lg:block">
             <motion.div
               className="h-px origin-left bg-gradient-to-r from-primary via-primary-glow to-primary/10"
               initial={reduce ? false : { scaleX: 0 }}

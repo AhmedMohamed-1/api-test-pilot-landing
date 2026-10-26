@@ -11,14 +11,14 @@ describe("waitlist email validation", () => {
   it("rejects a missing email with a clear message", () => {
     const parsed = emailSchema.safeParse("");
     expect(parsed.success).toBe(false);
-    if (!parsed.success) expect(parsed.error.issues[0].message).toBe("Email is required.");
+    if (!parsed.success) expect(parsed.error.issues[0]?.message).toBe("Email is required.");
   });
 
   it("rejects an invalid email with a clear message", () => {
     const parsed = emailSchema.safeParse("not-an-email");
     expect(parsed.success).toBe(false);
     if (!parsed.success) {
-      expect(parsed.error.issues[0].message).toBe("Enter a valid email address.");
+      expect(parsed.error.issues[0]?.message).toBe("Enter a valid email address.");
     }
   });
 });
