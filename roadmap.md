@@ -1,5 +1,7 @@
 # Roadmap
 
+> Latest update: 2026-11-05
+
 ## Prompt 1 — Foundation, design system and all sections ✅
 - Landing page complete: navbar, hero (animated orb + glass chips), built-for strip,
   problem, how it works, features bento, why it matters, FAQ, final CTA, footer.
